@@ -2,7 +2,14 @@
 
 ## Files
 
-* Project Notebook: W266_Project_DOC_Classification.ipynb
+* Project Notebook: 
+
+	* Implementation Specs and Notes: Text_Open_Classification_Implementation_Spec_and_Notes.ipynb
+
+	* CNN workbook: Text_Open_Classification_CNN_workbook.ipynb
+
+	* Paragraph2Vec workbook: Text_Open_Classification_Paragraph2vec_workbook.ipynb
+
 
 * Data_Set: Contain raw data of 20 newsgroup data set. Formatted data can be accessed directly from Scikit-learn package
 
@@ -10,7 +17,9 @@
 
 **Project Proposal and Plan Document:**
 
-* https://docs.google.com/document/d/1stzkcY4zR5NncOMhOfePjYtgVQawLY9O56kCAPPlfpE/edit
+* Initial proposal: https://docs.google.com/document/d/1stzkcY4zR5NncOMhOfePjYtgVQawLY9O56kCAPPlfpE/edit
+
+* Project milestone report W266_project_milestone_report.pdf
 
 **Reference papers:**
 
@@ -26,7 +35,7 @@ A Sensitivity Analysis of (and Practitioners' Guide to) Convolutional Neural Net
 
 * https://arxiv.org/abs/1510.03820
 
-**Reference Materials**
+**More Reference Materials**
 
 https://www.cs.uic.edu/~liub/lifelong-learning.html
 
