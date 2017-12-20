@@ -1,5 +1,9 @@
 # W266_project_submission
 
+## Report
+
+open-classification-text_final_report.pdf
+
 ## Files
 
 * Project Notebook: 
