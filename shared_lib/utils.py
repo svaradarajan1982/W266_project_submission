@@ -327,6 +327,43 @@ def get_train_test_docs(docs, labels, split = 0.8, shuffle=True):
     print "Test set: %d docs (%d tokens)" % fmt
 
     return train_docs, train_labels, test_docs, test_labels
+
+def get_train_val_docs(docs, labels, split = 0.8, shuffle=True):
+    """"
+    Args:
+      docs: a list of sample docs
+      split (double): fraction to use as training set
+      shuffle (int or bool): seed for shuffle of input data, or False to just
+      take the training data as the first xx% contiguously.
+
+    Returns:
+      train_docs, test_docs ( list(docs in string) ): the train and test
+      splits
+    """
+    
+    docs = np.array(docs, dtype=object)
+    labels = np.array(labels)
+    fmt = (len(docs), sum(map(len, docs)))
+    print "Loaded %d docs (%g tokens)" % fmt
+    
+    if shuffle:
+        np.random.seed(10)
+        shuffle_indices = np.random.permutation(np.arange(len(labels)))
+        docs = docs[shuffle_indices]
+        labels = labels[shuffle_indices]
+    train_frac = 0.8
+    split_idx = int(train_frac * len(labels))
+    train_docs = docs[:split_idx]
+    train_labels = labels[:split_idx]
+    valid_docs = docs[split_idx:]
+    valid_labels = labels[split_idx:]
+
+    fmt = (len(train_docs), sum(map(len, train_docs)))
+    print "Training set: %d docs (%d tokens)" % fmt
+    fmt = (len(valid_docs), sum(map(len, valid_docs)))
+    print "Validation set: %d docs (%d tokens)" % fmt
+
+    return train_docs, train_labels, valid_docs, valid_labels
     
 ## Tokenize document and convert ids
 ## Input: docs in np.array, vocab object
